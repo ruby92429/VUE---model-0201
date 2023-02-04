@@ -154,9 +154,9 @@ const app = createApp({
 });
 
 // x-template的寫法格式一樣用app.component建立一個元件且命名為product-model
-app.component("product-model", {
+app.component("product-modal", {
   props: ["tempProduct", "updateProduct"],
-  template: "product-model-template",
+  template: "productModal",
 });
 
 app.mount("#app");
