@@ -77,7 +77,8 @@
         <!-- 分頁元件 -->
       </div>
       <!-- Modal -->
-      <div
+      <!-- 剪下html的片段貼到x-template -->
+      <!-- <div
         id="productModal"
         ref="productModal"
         class="modal fade"
@@ -85,8 +86,8 @@
         aria-labelledby="productModalLabel"
         aria-hidden="true"
       >
-        <!-- 剪下html的片段貼到x-template -->
-        <!-- <div class="modal-dialog modal-xl">
+        
+        <div class="modal-dialog modal-xl">
           <div class="modal-content border-0">
             <div class="modal-header bg-dark text-white">
               <h5 id="productModalLabel" class="modal-title">
@@ -274,15 +275,16 @@
               </button>
             </div>
           </div>
-        </div> -->
-        <!-- 放入x-template  -->
-        <!-- 前內(即props定義的名稱)後外(外層元件的變數名稱) -->
-        <product-modal
-          :temp-product="tempProduct"
-          :update-product="updateProduct"
-        ></product-modal>
-      </div>
+        </div> 
+      </div> -->
 
+      <!-- 放入x-template  -->
+      <!-- 前內(即props定義的名稱)後外(外層元件的變數名稱) -->
+      <product-modal
+        :is-new="isNew"
+        :product="tempProduct"
+        :update-product="updateProduct"
+      ></product-modal>
       <div
         id="delProductModal"
         ref="delProductModal"

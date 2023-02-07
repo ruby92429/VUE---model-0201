@@ -146,17 +146,25 @@ const app = createApp({
         });
     },
     //因為初始化時沒有在tempProduct寫上陣列，所以加入此方法
-    createImages() {
-      this.tempProduct.imagesUrl = [];
-      this.tempProduct.imagesUrl.push("");
-    },
+    // createImages() {
+    //   this.tempProduct.imagesUrl = [];
+    //   this.tempProduct.imagesUrl.push("");
+    // },
   },
 });
 
 // x-template的寫法格式一樣用app.component建立一個元件且命名為product-model
 app.component("product-modal", {
-  props: ["tempProduct", "updateProduct"],
-  template: "productModal",
+  props: ["product", "updateProduct", "isNew"],
+  template: "#productModal",
+
+  //元件 product-modal 也需要將函式 createImages 用 props 引入
+  methods: {
+    createImages() {
+      this.tempProduct.imagesUrl = [];
+      this.tempProduct.imagesUrl.push("");
+    },
+  },
 });
 
 app.mount("#app");
